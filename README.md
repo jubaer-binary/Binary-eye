@@ -1,10 +1,4 @@
+# Binary Eye
+By Jubaer Alnazi
 
- ____   ____  ____    ____  ____   __ __        ___  __ __    ___ 
-|    \ |    ||    \  /    ||    \ |  |  |      /  _]|  |  |  /  _]
-|  o  ) |  | |  _  ||  o  ||  D  )|  |  |     /  [_ |  |  | /  [_ 
-|     | |  | |  |  ||     ||    / |  ~  |    |    _]|  ~  ||    _]
-|  O  | |  | |  |  ||  _  ||    \ |___, |    |   [_ |___, ||   [_ 
-|     | |  | |  |  ||  |  ||  .  \|     |    |     ||     ||     |
-|_____||____||__|__||__|__||__|\_||____/     |_____||____/ |_____|
-                                                                  
-
+This is scanner that continously monitors your ports and if there's any kind of changes to the ports it will alert you.

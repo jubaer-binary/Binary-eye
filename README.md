@@ -5,4 +5,4 @@ This is a bash script that continously monitors your ports and if there's any ki
 
 Binary Eye uses Gmail SMTP to send the alerts. 
 
-<img src=https://github.com/jubaer-binary/binary-eye/blob/master/BinaryEye.png"/>
+<img src="https://github.com/jubaer-binary/binary-eye/blob/master/BinaryEye.png"/>

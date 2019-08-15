@@ -1,4 +1,5 @@
 #!/bin/bash
+#Developer : Jubaer Alnazi
 #Colors
 RED=$(echo -en '\001\033[00;31m\002')
 GREEN=$(echo -en '\001\033[00;32m\002')

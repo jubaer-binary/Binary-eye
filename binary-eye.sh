@@ -23,6 +23,6 @@ echo "${GREEN}..................................................................
 if [ "$NMAP" == "$NMAP2" ]; then
     echo "${GREEN}Seems Like No Ports Have Been Open!"
 else
-    echo "${RED}ALERT! A NEW PORT WAS DETECTED"
+    echo "${RED}ALERT! A NEW PORT WAS DETECTED" | sendemail -o tls=yes -f YourEmail@gmail.com -t SomeoneYoureEmailing@domain.com -s smtp.gmail.com:587 -xu YourEmail@gmail.com -xp YOURPASSWORD -u "ALERT - NEW PORT WAS DETECTED $domains" -m "Check the ports \n $NMAP" 
 fi
 done

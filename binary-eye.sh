@@ -45,24 +45,38 @@ ${GREEN}
 |     | |  | |  |  ||  |  ||  .  \|     |    |     ||     ||     |
 |_____||____||__|__||__|__||__|\_||____/     |_____||____/ |_____|
 
-Binary Eye monitors your existing ports and if any port goes down or if there's a new port it will send a mail to you.
-By Jubaer Alnazi 
-${WHITE}Enter Domain:"
+
+
+${WHITE}Enter Domain"
 read domains
+echo "${WHITE}From Email:"
+read frommail
+echo "${WHITE}To Email:"
+read tomail
+echo "${WHITE}Gmail Username:"
+read gmailusername
+echo "${WHITE}Gmail Password:"
+read gmailpassword
+
+
+
+
 while true
 do
 echo "${GREEN}...................................................................."
 echo "${WHITE}Domain: ${GREEN}$domains"
 NMAP=$(nmap $domains | GREP_COLORS='mt=01;32' egrep --color=always 'open|\closed')
-sleep 50
+sleep 5
 NMAP2=$(nmap $domains | GREP_COLORS='mt=01;32' egrep --color=always 'open|\closed')
 echo "${GREEN}...................................................................."
 if [ "$NMAP" == "$NMAP2" ]; then
     echo "${GREEN}Seems Like No Ports Have Been Opened!"
-else
-    echo "${RED}ALERT! A NEW PORT WAS DETECTED" | sendemail -o tls=yes -f from@gmail.com -t to@gmail.com -s smtp.gmail.com:587 -xu username@gmail.com -xp PASSWORD -u "ALERT - NEW PORT ACTIVITY WAS DETECTED $domains" -m "New Port list-
+    
+ else
+    echo "${RED}ALERT! A NEW PORT ACTIVITY WAS DETECTED" | sendemail -o tls=yes -f $frommail -t $tomail -s smtp.gmail.com:587 -xu $gmailusername -xp $gmailpassword -u "ALERT - NEW PORT ACTIVITY DETECTED $domains" -m "New Port list-
 $NMAP2"
-
 exit 1
 fi
 done
+
+ 

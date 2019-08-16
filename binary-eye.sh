@@ -61,13 +61,12 @@ read gmailpassword
 
 
 
-
-while true
-do
 echo "${GREEN}...................................................................."
 echo "${WHITE}Domain: ${GREEN}$domains"
 NMAP=$(nmap -p- $domains | GREP_COLORS='mt=01;32' egrep --color=always 'open|\closed')
 sleep 5
+while true
+do
 NMAP2=$(nmap -p- $domains | GREP_COLORS='mt=01;32' egrep --color=always 'open|\closed')
 echo "${GREEN}...................................................................."
 if [ "$NMAP" == "$NMAP2" ]; then

@@ -67,7 +67,7 @@ NMAP=$(nmap -p- $domains | GREP_COLORS='mt=01;32' egrep --color=always 'open|\cl
 sleep 5
 while true
 do
-NMAP2=$(nmap -p- $domains | GREP_COLORS='mt=01;32' egrep --color=always 'open|\closed')
+NMAP2=$(nmap -Pn -p- $domains | GREP_COLORS='mt=01;32' egrep --color=always 'open|\closed')
 echo "${GREEN}...................................................................."
 if [ "$NMAP" == "$NMAP2" ]; then
     echo "${GREEN}Seems Like No Ports Have Been Opened!"
